@@ -1,6 +1,6 @@
 # 发布准备说明
 
-日期：2026-10-17。项目按本地个人工具的实验版准备；这份说明不代表已经创建或上传 GitHub 仓库。
+日期：2026-10-17。项目按本地个人工具的实验版准备，已上传至私有 GitHub 仓库 [wujizm/Agent-acad-assis](https://github.com/wujizm/Agent-acad-assis)。
 
 ## 许可证与分发范围
 
@@ -42,12 +42,14 @@ python scripts/create_example.py --data-dir .test-output/new-example
 | 环境 / 功能 | 验证范围 |
 | --- | --- |
 | Windows / Python 3.13.7 | 排除个人配置与资料的公开源码副本中，67 项自动化测试通过；依赖检查、JS 语法、41 个本地文档链接检查和离线示例生成通过。网络专项 11 项还在 urllib3 2.6.3 环境通过 |
-| Windows、Ubuntu / Python 3.11、3.13 | 已配置 GitHub Actions 矩阵；仓库发布后才会实际执行，不能提前视为通过 |
+| Windows、Ubuntu / Python 3.11、3.13 | 首次 GitHub Actions 的四种组合全部通过，包括依赖检查、67 项测试、JS 语法、文档链接和离线示例生成；见下方运行记录 |
 | macOS | 尚未验证，不声明完整兼容 |
 | Codex CLI | 既有真实调用记录基于 `0.163.0-alpha.10.2`；此次普通 CI 使用模拟接口，不调用账户模型 |
 | 外部模型 API | 使用兼容接口模拟测试；各供应商需自行配置并执行连接测试 |
 
 CI 配置见 [.github/workflows/ci.yml](../.github/workflows/ci.yml)，采用只读仓库权限；执行依赖检查、单元与本地 HTTP 测试、JavaScript 语法检查、文档链接检查以及离线示例生成。不要求模型密钥，不将公开服务的临时限流作为普通 CI 的依赖。
+
+[首次 GitHub CI 运行记录](https://github.com/wujizm/Agent-acad-assis/actions/runs/39017861585) 对应初始提交 `9e09d2c`，四个任务均成功。后续版本以对应提交的 CI 结果为准；私有仓库的运行记录需要有权限的 GitHub 账户访问。
 
 手工联网检查使用 `python scripts/check_live.py`，只发送公开测试关键词，不调用模型。真实模型测试是单独的可选步骤，详见 [README](../README.md)。
 
