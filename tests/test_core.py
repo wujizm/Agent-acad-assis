@@ -5,6 +5,7 @@ import tempfile
 import threading
 import unittest
 import zipfile
+from http.client import HTTPConnection
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 from unittest.mock import Mock, patch
@@ -299,6 +300,44 @@ class HttpTests(unittest.TestCase):
         self.assertEqual(requests.post(self.base + "/api/topics", json={"name": "bad"}, timeout=5).status_code, 403)
         self.assertEqual(requests.post(self.base + "/api/topics", json={"name": "bad"},
             headers={**self.headers, "Origin": "https://evil.example"}, timeout=5).status_code, 403)
+
+    def test_rejected_post_with_separate_headers_and_body_returns_403(self):
+        body = b'{"name":"unauthorized"}' + b' ' * 65536
+        for headers in ({}, {**self.headers, "Origin": "https://evil.example"}):
+            with self.subTest(headers=headers):
+                connection = HTTPConnection("127.0.0.1", self.server.server_port, timeout=5)
+                try:
+                    connection.putrequest("POST", "/api/topics")
+                    connection.putheader("Content-Type", "application/json")
+                    connection.putheader("Content-Length", str(len(body)))
+                    for name, value in headers.items():
+                        connection.putheader(name, value)
+                    connection.endheaders()
+                    threading.Event().wait(.05)  # The body can arrive after the headers.
+                    connection.send(body)
+                    response = connection.getresponse()
+                    self.assertEqual(response.status, 403)
+                    self.assertIn("error", json.loads(response.read()))
+                finally:
+                    connection.close()
+        self.assertEqual(self.app.store.topics(), [])
+
+    def test_post_body_size_and_read_timeout_are_bounded(self):
+        with patch.object(self.server.RequestHandlerClass, "timeout", .05):
+            for length, status in ((28_000_001, 413), (2, 408)):
+                with self.subTest(length=length):
+                    connection = HTTPConnection("127.0.0.1", self.server.server_port, timeout=5)
+                    try:
+                        connection.putrequest("POST", "/api/topics")
+                        connection.putheader("Content-Type", "application/json")
+                        connection.putheader("Content-Length", str(length))
+                        connection.endheaders()
+                        response = connection.getresponse()
+                        self.assertEqual(response.status, status)
+                        self.assertIn("error", json.loads(response.read()))
+                    finally:
+                        connection.close()
+        self.assertEqual(self.app.store.topics(), [])
 
     def test_uploaded_raw_file_is_retained(self):
         topic = self.app.store.create_topic("Upload")

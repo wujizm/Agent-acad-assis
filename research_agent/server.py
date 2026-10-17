@@ -132,6 +132,8 @@ class Application:
 
 def make_handler(app):
     class Handler(BaseHTTPRequestHandler):
+        timeout = 10
+
         def log_message(self, format, *args):
             # Avoid persisting source URLs or research questions in access logs.
             pass
@@ -206,6 +208,12 @@ def make_handler(app):
 
         def do_POST(self):
             try:
+                length = int(self.headers.get("Content-Length", 0))
+                if length < 1 or length > 28_000_000:
+                    self.send({"error": "请求为空或超过大小限制"}, 413)
+                    return
+                # Consume the bounded body before rejecting; closing with unread bytes can reset TCP on Windows.
+                body = self.rfile.read(length)
                 origin = self.headers.get("Origin")
                 allowed = (f"http://127.0.0.1:{self.server.server_port}", f"http://localhost:{self.server.server_port}")
                 if not self.allowed_host() or (origin and origin not in allowed) or self.headers.get("X-CSRF-Token") != app.csrf:
@@ -213,11 +221,7 @@ def make_handler(app):
                     return
                 if not self.headers.get("Content-Type", "").startswith("application/json"):
                     raise ValueError("需要 JSON 请求")
-                length = int(self.headers.get("Content-Length", 0))
-                if length < 1 or length > 28_000_000:
-                    self.send({"error": "请求为空或超过大小限制"}, 413)
-                    return
-                data = json.loads(self.rfile.read(length))
+                data = json.loads(body)
                 if not isinstance(data, dict):
                     raise ValueError("请求必须为 JSON 对象")
                 parts = urlsplit(self.path).path.strip("/").split("/")
@@ -267,6 +271,8 @@ def make_handler(app):
                     self.send({"error": "未找到"}, 404)
                     return
                 self.send(result)
+            except TimeoutError:
+                self.send({"error": "请求读取超时"}, 408)
             except (ValueError, TypeError, KeyError) as exc:
                 self.send({"error": str(exc)}, 400)
             except (ConnectionAbortedError, BrokenPipeError):
