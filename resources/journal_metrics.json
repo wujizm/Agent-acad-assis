@@ -1,0 +1,281 @@
+[
+  {
+    "journal": "Physical Review A",
+    "year": 2025,
+    "value": 3.0,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review B",
+    "year": 2025,
+    "value": 3.9,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review C",
+    "year": 2025,
+    "value": 3.3,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review D",
+    "year": 2025,
+    "value": 5.3,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review E",
+    "year": 2025,
+    "value": 2.5,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review Letters",
+    "year": 2025,
+    "value": 9.4,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review Materials",
+    "year": 2025,
+    "value": 3.6,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review Research",
+    "year": 2025,
+    "value": 4.0,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review Applied",
+    "year": 2025,
+    "value": 4.4,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Physical Review X",
+    "year": 2025,
+    "value": 16.8,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "Reviews of Modern Physics",
+    "year": 2025,
+    "value": 48.9,
+    "source_url": "https://journals.aps.org/metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "APS 官方期刊指标页"
+  },
+  {
+    "journal": "The Journal of Chemical Physics",
+    "aliases": [
+      "Journal of Chemical Physics"
+    ],
+    "issn": [
+      "0021-9606",
+      "1089-7690"
+    ],
+    "year": 2025,
+    "value": 3.7,
+    "source_url": "https://pubs.aip.org/aip/jcp/pages/about",
+    "retrieved_at": "2026-10-17",
+    "provider": "AIP 官方期刊指标页"
+  },
+  {
+    "journal": "Nature",
+    "year": 2025,
+    "value": 56.1,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Communications",
+    "year": 2025,
+    "value": 18.1,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Scientific Reports",
+    "year": 2025,
+    "value": 4.9,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Computational Science",
+    "year": 2025,
+    "value": 20.3,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Machine Intelligence",
+    "year": 2025,
+    "value": 29.8,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Materials",
+    "year": 2025,
+    "value": 38.0,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Physics",
+    "year": 2025,
+    "value": 18.0,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Reviews Materials",
+    "year": 2025,
+    "value": 83.3,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Reviews Physics",
+    "year": 2025,
+    "value": 46.6,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Nature Reviews Chemistry",
+    "year": 2025,
+    "value": 50.3,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "npj Computational Materials",
+    "year": 2025,
+    "value": 13.1,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "npj Quantum Materials",
+    "year": 2025,
+    "value": 6.6,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Communications Physics",
+    "year": 2025,
+    "value": 5.5,
+    "source_url": "https://www.nature.com/nature-portfolio/about-journals/journal-metrics",
+    "retrieved_at": "2026-10-17",
+    "provider": "Nature Portfolio 官方期刊指标页"
+  },
+  {
+    "journal": "Frontiers in Artificial Intelligence",
+    "year": 2025,
+    "value": 6.7,
+    "source_url": "https://www.frontiersin.org/about/impact",
+    "retrieved_at": "2026-10-17",
+    "provider": "Frontiers 官方期刊指标页"
+  },
+  {
+    "journal": "Frontiers in Materials",
+    "year": 2025,
+    "value": 3.5,
+    "source_url": "https://www.frontiersin.org/about/impact",
+    "retrieved_at": "2026-10-17",
+    "provider": "Frontiers 官方期刊指标页"
+  },
+  {
+    "journal": "Artificial Intelligence Review",
+    "year": 2025,
+    "value": 18.8,
+    "source_url": "https://link.springer.com/journal/10462",
+    "retrieved_at": "2026-10-17",
+    "provider": "Springer Nature 官方期刊页"
+  },
+  {
+    "journal": "Chemical Reviews",
+    "year": 2025,
+    "value": 64.2,
+    "source_url": "https://axial.acs.org/publishing/journal-metrics-2026",
+    "retrieved_at": "2026-10-17",
+    "provider": "ACS 官方 2026 年指标发布（2025 JIF）"
+  },
+  {
+    "journal": "Journal of the American Chemical Society",
+    "year": 2025,
+    "value": 16.6,
+    "source_url": "https://axial.acs.org/publishing/journal-metrics-2026",
+    "retrieved_at": "2026-10-17",
+    "provider": "ACS 官方 2026 年指标发布（2025 JIF）"
+  },
+  {
+    "journal": "Science",
+    "year": 2025,
+    "value": 47.3,
+    "source_url": "https://www.science.org/content/page/journal-metrics-overview",
+    "retrieved_at": "2026-10-17",
+    "provider": "AAAS 官方期刊指标页（June 2026 更新，2025 引用年度）"
+  },
+  {
+    "journal": "Science Advances",
+    "year": 2025,
+    "value": 13.9,
+    "source_url": "https://www.science.org/content/page/journal-metrics-overview",
+    "retrieved_at": "2026-10-17",
+    "provider": "AAAS 官方期刊指标页（June 2026 更新，2025 引用年度）"
+  },
+  {
+    "journal": "Science Robotics",
+    "year": 2025,
+    "value": 25.5,
+    "source_url": "https://www.science.org/content/page/journal-metrics-overview",
+    "retrieved_at": "2026-10-17",
+    "provider": "AAAS 官方期刊指标页（June 2026 更新，2025 引用年度）"
+  },
+  {
+    "journal": "Entropy",
+    "year": 2025,
+    "value": 2.1,
+    "source_url": "https://www.mdpi.com/journal/entropy/imprint",
+    "retrieved_at": "2026-10-17",
+    "provider": "MDPI 官方期刊信息页"
+  }
+]

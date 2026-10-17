@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-17",
+  "automated_tests": 54,
+  "topics": [
+    {
+      "topic": "AI for Science",
+      "topic_id": 1,
+      "archived": 65,
+      "included": 16,
+      "with_text": 10,
+      "with_if": 6,
+      "articles": 11,
+      "source_types": {
+        "article": 11,
+        "book": 3,
+        "report": 1,
+        "chapter": 1
+      },
+      "reports": {
+        "direction": {
+          "cited_chunks": 12,
+          "body_chinese_chars": 864
+        },
+        "review": {
+          "cited_chunks": 14,
+          "body_chinese_chars": 1760
+        }
+      },
+      "qa_evidence": 8,
+      "recent_count": 55,
+      "heat": "较多",
+      "candidate_counts": {
+        "Crossref": 152,
+        "Open Library": 50
+      },
+      "automatic_selected": 15,
+      "checks": "PASS: fresh summaries and reports; citations; no bibliography-only chunks; IF numeric/year/provenance; all rows/cards/originals; ZIP integrity"
+    },
+    {
+      "topic": "机器学习势函数",
+      "topic_id": 2,
+      "archived": 29,
+      "included": 16,
+      "with_text": 10,
+      "with_if": 7,
+      "articles": 12,
+      "source_types": {
+        "article": 12,
+        "chapter": 2,
+        "book": 1,
+        "web": 1
+      },
+      "reports": {
+        "direction": {
+          "cited_chunks": 12,
+          "body_chinese_chars": 1018
+        },
+        "review": {
+          "cited_chunks": 14,
+          "body_chinese_chars": 2026
+        }
+      },
+      "qa_evidence": 8,
+      "recent_count": 62,
+      "heat": "较多",
+      "candidate_counts": {
+        "Crossref": 167,
+        "Open Library": 50
+      },
+      "automatic_selected": 12,
+      "checks": "PASS: fresh summaries and reports; citations; no bibliography-only chunks; IF numeric/year/provenance; all rows/cards/originals; ZIP integrity"
+    },
+    {
+      "topic": "金属导电理论",
+      "topic_id": 3,
+      "archived": 43,
+      "included": 15,
+      "with_text": 7,
+      "with_if": 2,
+      "articles": 9,
+      "source_types": {
+        "book": 3,
+        "article": 9,
+        "chapter": 3
+      },
+      "reports": {
+        "direction": {
+          "cited_chunks": 10,
+          "body_chinese_chars": 926
+        },
+        "review": {
+          "cited_chunks": 12,
+          "body_chinese_chars": 2130
+        }
+      },
+      "qa_evidence": 8,
+      "recent_count": 19,
+      "heat": "中等",
+      "candidate_counts": {
+        "Crossref": 194,
+        "Open Library": 50
+      },
+      "automatic_selected": 24,
+      "checks": "PASS: fresh summaries and reports; citations; no bibliography-only chunks; IF numeric/year/provenance; all rows/cards/originals; ZIP integrity"
+    }
+  ]
+}

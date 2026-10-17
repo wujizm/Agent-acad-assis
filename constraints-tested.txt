@@ -1,0 +1,11 @@
+# Dependency snapshot validated on Windows / Python 3.13.7, 2026-10-17.
+# Install with: python -m pip install -r requirements.txt -c constraints-tested.txt
+# CI also checks Python 3.11 and Ubuntu; see docs/RELEASE_PREPARATION.md for actual results.
+certifi==2026.7.22
+charset-normalizer==3.5.2
+et-xmlfile==2.0.0
+idna==3.20
+openpyxl==3.1.5
+PyMuPDF==1.28.2
+requests==2.34.2
+urllib3==2.8.0

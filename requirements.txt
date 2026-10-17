@@ -1,0 +1,4 @@
+requests>=2.32,<3
+urllib3>=2.6.3,<3
+openpyxl>=3.1,<4
+PyMuPDF>=1.26,<2

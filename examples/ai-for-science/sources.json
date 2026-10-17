@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-17",
+  "description": "可公开的教程输入。5 条书目/网页元信息和 3 篇原创教学笔记；不含论文摘要、全文、个人数据或模型生成结果。",
+  "query": "artificial intelligence scientific discovery; deep learning materials discovery; protein structure prediction; probabilistic machine learning",
+  "domains": "nature.com, deepmind.google, probml.github.io",
+  "sources": [
+    {
+      "title": "Scientific discovery in the age of artificial intelligence",
+      "kind": "article",
+      "venue": "Nature",
+      "authors": "Hanchen Wang; Tianfan Fu; Yuanqi Du; Wenhao Gao; Kexin Huang; Ziming Liu; Payal Chandak; Shengchao Liu; Peter Van Katwyk; Andreea Deac; Anima Anandkumar; Karianne Bergen; Carla P. Gomes; Shirley Ho; Pushmeet Kohli; Joan Lasenby; Jure Leskovec; Tie-Yan Liu; Arjun Manrai; Debora Marks; Bharath Ramsundar; Le Song; Jimeng Sun; Jian Tang; Petar Veličković; Max Welling; Linfeng Zhang; Connor W. Coley; Yoshua Bengio; Marinka Zitnik",
+      "affiliations": "",
+      "year": "2023",
+      "doi": "10.1038/s41586-023-06221-2",
+      "url": "https://doi.org/10.1038/s41586-023-06221-2",
+      "issn": [
+        "0028-0836",
+        "1476-4687"
+      ],
+      "title_zh": "人工智能时代的科学发现",
+      "title_en": "Scientific discovery in the age of artificial intelligence",
+      "evidence_level": "metadata",
+      "text": "",
+      "summary": "公开书目示例；请补充原文后概括研究内容。",
+      "notes": "元数据来自 Crossref，2026-10-17 核对；中文译名为教程提供。单位缺失保留为空。不随示例分发论文摘要或全文。",
+      "provenance": [
+        {
+          "provider": "Crossref 公开元数据",
+          "url": "https://api.crossref.org/works/10.1038/s41586-023-06221-2",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "title": "Highly accurate protein structure prediction with AlphaFold",
+      "kind": "article",
+      "venue": "Nature",
+      "authors": "John Jumper; Richard Evans; Alexander Pritzel; Tim Green; Michael Figurnov; Olaf Ronneberger; Kathryn Tunyasuvunakool; Russ Bates; Augustin Žídek; Anna Potapenko; Alex Bridgland; Clemens Meyer; Simon A. A. Kohl; Andrew J. Ballard; Andrew Cowie; Bernardino Romera-Paredes; Stanislav Nikolov; Rishub Jain; Jonas Adler; Trevor Back; Stig Petersen; David Reiman; Ellen Clancy; Michal Zielinski; Martin Steinegger; Michalina Pacholska; Tamas Berghammer; Sebastian Bodenstein; David Silver; Oriol Vinyals; Andrew W. Senior; Koray Kavukcuoglu; Pushmeet Kohli; Demis Hassabis",
+      "affiliations": "",
+      "year": "2021",
+      "doi": "10.1038/s41586-021-03819-2",
+      "url": "https://doi.org/10.1038/s41586-021-03819-2",
+      "issn": [
+        "0028-0836",
+        "1476-4687"
+      ],
+      "title_zh": "利用 AlphaFold 实现高精度蛋白质结构预测",
+      "title_en": "Highly accurate protein structure prediction with AlphaFold",
+      "evidence_level": "metadata",
+      "text": "",
+      "summary": "公开书目示例；请补充原文后概括研究内容。",
+      "notes": "元数据来自 Crossref，2026-10-17 核对；中文译名为教程提供。单位缺失保留为空。不随示例分发论文摘要或全文。",
+      "provenance": [
+        {
+          "provider": "Crossref 公开元数据",
+          "url": "https://api.crossref.org/works/10.1038/s41586-021-03819-2",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "title": "Scaling deep learning for materials discovery",
+      "kind": "article",
+      "venue": "Nature",
+      "authors": "Amil Merchant; Simon Batzner; Samuel S. Schoenholz; Muratahan Aykol; Gowoon Cheon; Ekin Dogus Cubuk",
+      "affiliations": "",
+      "year": "2023",
+      "doi": "10.1038/s41586-023-06735-9",
+      "url": "https://doi.org/10.1038/s41586-023-06735-9",
+      "issn": [
+        "0028-0836",
+        "1476-4687"
+      ],
+      "title_zh": "扩展深度学习以发现材料",
+      "title_en": "Scaling deep learning for materials discovery",
+      "evidence_level": "metadata",
+      "text": "",
+      "summary": "公开书目示例；请补充原文后概括研究内容。",
+      "notes": "元数据来自 Crossref，2026-10-17 核对；中文译名为教程提供。单位缺失保留为空。不随示例分发论文摘要或全文。",
+      "provenance": [
+        {
+          "provider": "Crossref 公开元数据",
+          "url": "https://api.crossref.org/works/10.1038/s41586-023-06735-9",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "title": "Probabilistic Machine Learning: An Introduction",
+      "title_zh": "概率机器学习：导论",
+      "kind": "book",
+      "venue": "MIT Press",
+      "authors": "Kevin P. Murphy",
+      "affiliations": "",
+      "year": "2022",
+      "url": "https://probml.github.io/pml-book/book1.html",
+      "evidence_level": "metadata",
+      "text": "",
+      "summary": "方法学习的书目入口；未导入书籍正文。",
+      "notes": "书名、作者、出版社和年份据作者书籍主页核对；不分发书籍 PDF 或章节。",
+      "provenance": [
+        {
+          "provider": "作者维护的书籍主页",
+          "url": "https://probml.github.io/pml-book/book1.html",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "title": "Millions of new materials discovered with deep learning",
+      "title_zh": "借助深度学习发现数百万种新材料（机构介绍页）",
+      "kind": "web",
+      "venue": "Google DeepMind",
+      "authors": "",
+      "affiliations": "",
+      "year": "2023",
+      "url": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/",
+      "evidence_level": "metadata",
+      "text": "",
+      "summary": "机构对材料发现工作的介绍入口；本示例仅收录书目信息。",
+      "notes": "机构说明页可辅助理解背景，正式科研引用仍应核对原论文。",
+      "provenance": [
+        {
+          "provider": "Google DeepMind 官方网站",
+          "url": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "title": "AI for Science 教学笔记：问题、证据与研究流程",
+      "kind": "other",
+      "venue": "知材项目原创教学材料",
+      "authors": "知材项目贡献者",
+      "affiliations": "",
+      "year": "2026",
+      "url": "",
+      "evidence_level": "fulltext",
+      "note_file": "notes/01-overview.md",
+      "summary": "项目原创教学说明，用于演示问题、证据与研究流程，不是论文原文。",
+      "notes": "本条全文仅指这份原创笔记的全文，不指其引用论文或书籍的全文。",
+      "text_version": "原创教学说明；非论文原文、摘要或书籍章节",
+      "provenance": [
+        {
+          "provider": "本项目原创教程",
+          "url": "",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "title": "AI for Science 教学笔记：材料预测与实验验证",
+      "kind": "other",
+      "venue": "知材项目原创教学材料",
+      "authors": "知材项目贡献者",
+      "affiliations": "",
+      "year": "2026",
+      "url": "",
+      "evidence_level": "fulltext",
+      "note_file": "notes/02-materials.md",
+      "summary": "项目原创教学说明，用于演示材料预测与实验验证，不是论文原文。",
+      "notes": "本条全文仅指这份原创笔记的全文，不指其引用论文或书籍的全文。",
+      "text_version": "原创教学说明；非论文原文、摘要或书籍章节",
+      "provenance": [
+        {
+          "provider": "本项目原创教程",
+          "url": "",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    },
+    {
+      "title": "AI for Science 教学笔记：跨领域案例与方法基础",
+      "kind": "other",
+      "venue": "知材项目原创教学材料",
+      "authors": "知材项目贡献者",
+      "affiliations": "",
+      "year": "2026",
+      "url": "",
+      "evidence_level": "fulltext",
+      "note_file": "notes/03-methods.md",
+      "summary": "项目原创教学说明，用于演示跨领域案例与方法基础，不是论文原文。",
+      "notes": "本条全文仅指这份原创笔记的全文，不指其引用论文或书籍的全文。",
+      "text_version": "原创教学说明；非论文原文、摘要或书籍章节",
+      "provenance": [
+        {
+          "provider": "本项目原创教程",
+          "url": "",
+          "retrieved_at": "2026-10-17"
+        }
+      ]
+    }
+  ]
+}

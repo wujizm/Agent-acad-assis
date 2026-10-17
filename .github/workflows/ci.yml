@@ -1,0 +1,45 @@
+name: Tests and public documentation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python: ['3.11', '3.13']
+    env:
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install tested dependency versions
+        run: python -m pip install -r requirements.txt -c constraints-tested.txt
+      - name: Check dependencies
+        run: python -m pip check
+      - name: Unit and local HTTP tests (no model credentials)
+        run: python -m unittest discover -s tests -v
+      - name: JavaScript syntax
+        run: node --check static/app.js
+      - name: Public documentation links
+        run: python scripts/check_docs.py
+      - name: Build the offline tutorial example
+        run: python scripts/create_example.py --data-dir .test-output/ci-example

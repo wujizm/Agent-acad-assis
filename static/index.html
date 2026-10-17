@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知材 · 科研资料库</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="知材首页"><span class="brand-mark">知</span><span>知材<small>RESEARCH LIBRARY</small></span></a>
+    <div class="sidebar-heading"><span>研究主题</span><button id="new-topic" class="icon-button" aria-label="新建主题">＋</button></div>
+    <nav id="topics" aria-label="主题列表"></nav>
+    <div class="sidebar-foot"><span class="status-dot"></span>资料存储在本机<button id="settings-button" class="text-button">模型与搜集设置</button><a class="text-button" href="/license" target="_blank" rel="noopener">AGPL-3.0 许可 · 无担保</a></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>个人科研工作台 <span class="muted">/ 资料整理</span></span><span id="model-status" class="badge">正在连接</span></header>
+    <section id="welcome" class="welcome">
+      <div class="eyebrow">从一个好问题开始</div><h1>让资料成为<br>可以追溯的知识。</h1>
+      <p>把论文、书籍与可信资料放在同一个研究主题中。<br>保留来源，整理脉络，带着证据回答问题。</p>
+      <button id="welcome-create" class="primary">创建第一个主题 <span>↗</span></button>
+      <div class="steps"><div><b>01</b><strong>搜集与归档</strong><span>原始资料 · 独立笔记 · Excel</span></div><div><b>02</b><strong>整理与综合</strong><span>主题综述 · 进展与知识脉络</span></div><div><b>03</b><strong>检索与提问</strong><span>原文证据 · 可追溯引用</span></div></div>
+    </section>
+    <section id="workspace" hidden>
+      <div class="page-heading"><div><div class="eyebrow">TOPIC WORKSPACE</div><h1 id="topic-name"></h1><p id="topic-query" class="muted"></p></div><div class="actions"><a id="export-xlsx" class="button secondary">Excel 目录 ↓</a><a id="export-zip" class="button primary">下载主题资料包 ↓</a></div></div>
+      <div class="stats"><div><span>已归档资料</span><strong id="count-all">0</strong></div><div><span>有摘要 / 正文</span><strong id="count-content">0</strong></div><div><span>待人工核验</span><strong id="count-unverified">0</strong></div><div><span>主题报告</span><strong id="count-reports">0<span>/ 2</span></strong></div></div>
+      <div class="tabs" role="tablist"><button data-tab="library" class="active" role="tab" aria-selected="true">资料目录</button><button data-tab="reports" role="tab" aria-selected="false">综述与方向</button><button data-tab="qa" role="tab" aria-selected="false">知识库问答</button></div>
+      <section id="panel-library" class="panel" role="tabpanel">
+        <div class="toolbar"><input id="filter" type="search" placeholder="筛选题名、作者或来源…" aria-label="筛选资料"><select id="source-sort" aria-label="资料排序"><option value="importance">重要度优先</option><option value="year">发表时间优先</option><option value="if">已核实 IF 优先</option></select><div class="actions"><button id="collect-button" class="secondary">联网搜集</button><button id="import-button" class="secondary">导入资料 ＋</button><button id="enrich-button" class="primary">AI 整理资料</button></div></div>
+        <p class="hint">重要度综合相关性、论文关注度、IF、原文覆盖和时效，仅供安排阅读顺序。IF附年份及核实来源，未提供不记为0。<button id="rank-button" class="text-button">刷新 IF 与重要度</button></p>
+        <details id="screening-summary" class="notice" hidden><summary id="screening-title"></summary><div id="screening-details"></div></details>
+        <div class="table-wrap"><table><thead><tr><th>资料名称</th><th>来源 / 年份</th><th>内容范围</th><th>状态</th></tr></thead><tbody id="source-rows"></tbody></table></div>
+        <div id="library-empty" class="empty"><span class="empty-symbol">⌑</span><h3>把第一份资料放进来</h3><p>可以联网搜集，也可以导入网址、PDF 或阅读摘录。</p></div>
+      </section>
+      <section id="panel-reports" class="panel" role="tabpanel" hidden>
+        <div class="report-options"><article><span class="eyebrow">01 / SYNTHESIS</span><h2>主题文献综述</h2><p>梳理研究背景、主要路线、方法分歧与待解决问题。目标约 1500–2500 字。</p><button class="primary" data-generate="review">生成综述</button><button class="text-button" data-report="review">查看已有综述</button></article><article><span class="eyebrow">02 / RESEARCH MAP</span><h2>科研方向总结</h2><p>提炼重要进展、前沿线索，以及概念到方法再到应用的知识脉络。目标约 800–1200 字。</p><button class="primary" data-generate="direction">生成方向总结</button><button class="text-button" data-report="direction">查看已有总结</button></article></div>
+        <p class="hint">仅使用已获取的证据；正文不足时会说明局限。AI 结果是待核验草稿，更新资料后需重新生成。</p><div id="report-state" class="notice" hidden></div><article id="report-content" class="document"></article>
+      </section>
+      <section id="panel-qa" class="panel" role="tabpanel" hidden>
+        <div class="qa-intro"><div class="eyebrow">ASK YOUR LIBRARY</div><h2>从已有资料中寻找答案</h2><p class="muted">回答附原文片段。没有证据时，保留问题。</p></div>
+        <form id="ask-form" class="ask-box"><label for="question">你想了解什么？</label><textarea id="question" maxlength="2000" rows="3" required placeholder="例如：这个方向有哪些主要研究路线？哪些实验结果存在分歧？"></textarea><div><label class="checkbox"><input type="checkbox" id="use-ai" checked>使用 AI 解释（已配置时）</label><button class="primary" type="submit">检索并提问 ↗</button></div></form>
+        <div id="answer" class="document"></div><div id="evidence" class="evidence-list"></div>
+      </section>
+    </section>
+    <section id="task" class="task" aria-live="polite" hidden><div class="task-title"><span id="task-indicator" class="status-dot"></span><strong id="task-message"></strong><button id="dismiss-task" class="icon-button" aria-label="关闭任务提示">×</button></div><div id="task-details"></div></section>
+  </main>
+
+  <dialog id="topic-dialog"><form id="topic-form"><div class="dialog-heading"><h2>新建研究主题</h2><button type="button" data-close class="icon-button" aria-label="关闭">×</button></div><label>主题名称<input name="name" required maxlength="160" placeholder="例如：高熵合金的强韧化机制"></label><label>检索关键词<input name="query" maxlength="500" placeholder="例如：high entropy alloy strengthening toughening"></label><p class="hint">英文检索词通常更适合国际论文和书籍目录；留空时使用主题名称。</p><label>可信网站域名（可选）<textarea name="domains" rows="2" placeholder="nist.gov, energy.gov, 某大学或研究机构的域名"></textarea></label><p class="hint">网页自动搜索需配置 Brave 密钥。域名限定采集范围，内容仍需核验。</p><button class="primary full" type="submit">创建主题</button></form></dialog>
+
+  <dialog id="collect-dialog"><form id="collect-form"><div class="dialog-heading"><h2>搜集主题资料</h2><button type="button" data-close class="icon-button" aria-label="关闭">×</button></div><p>搜索论文、书籍及已配置的其他来源，重复条目自动合并。</p><label>筛选策略<select name="mode"><option value="auto">按主题热度自动调整（推荐）</option><option value="broad">广泛收集 · 优先相关性</option><option value="strict">优先高关注度 · 保留近期研究</option></select></label><label>每个来源最多收录<input name="limit" type="number" min="1" max="25" value="10" required></label><p class="hint">根据近三日历年的相关候选数量调整标准。成果多时结合已核实 IF 和本来源引用指标筛选，保留近期研究、经典论文与基础资料。</p><p class="hint">IF 记录年份和出版社出处，未核实值明确标注；当前 IF 不是论文发表时的 IF。已连接模型时会发送主题及候选题名/摘要，扩展检索词并核查相关性。指标只辅助阅读排序；候选采样不是穷尽检索，未入选记录可下载复查。</p><button type="submit" class="primary full">开始搜集</button></form></dialog>
+
+  <dialog id="import-dialog"><div class="dialog-heading"><h2>导入资料</h2><button data-close class="icon-button" aria-label="关闭">×</button></div><div class="import-grid"><form id="url-form"><h3>从网址导入</h3><label>网页或公开 PDF 网址<input name="url" type="url" required placeholder="https://…"></label><button class="secondary" type="submit">读取网址</button></form><form id="upload-form"><h3>上传原始资料</h3><label>PDF / TXT / Markdown<input id="upload-file" type="file" accept=".pdf,.txt,.md" required></label><label>资料题名（可选）<input name="title" placeholder="留空时使用文件信息"></label><label>内容范围<select name="evidence_level"><option value="fulltext">上传的是完整正文</option><option value="excerpt">只上传了章节或节选</option><option value="abstract">仅摘要</option></select></label><p class="hint">20 MB 以内。扫描 PDF 需先 OCR；原文件保留在资料包中。</p><button class="secondary" type="submit">上传并归档</button></form></div><button id="manual-button" class="text-button">手工录入题名、来源与摘录 →</button></dialog>
+
+  <dialog id="source-dialog" class="wide"><form id="source-form"><div class="dialog-heading"><h2 id="source-dialog-title">资料详情</h2><button type="button" data-close class="icon-button" aria-label="关闭">×</button></div><input type="hidden" name="id"><div class="form-grid"><label class="span2">资料名称（原题名）<input name="title" required></label><label>中文题名<input name="title_zh"></label><label>英文题名<input name="title_en"></label><label>类型<select name="kind"><option value="article">论文</option><option value="book">书籍</option><option value="chapter">书籍章节</option><option value="report">报告</option><option value="standard">标准</option><option value="preprint">预印本</option><option value="web">网页</option><option value="other">其他</option></select></label><label>年份<input name="year"></label><label>期刊 / 出版社 / 发布机构<input name="venue"></label><label>作者<input name="authors"></label><label class="span2">作者单位（保留作者与单位关联，缺失留空）<textarea name="affiliations" rows="2"></textarea></label><label>DOI<input name="doi"></label><label>ISBN<input name="isbn"></label><label class="span2">网址<input name="url" type="url"></label><label class="span2">一句话简介<textarea name="summary" rows="2"></textarea></label><label class="span2">主要内容<textarea name="main_content" rows="5"></textarea></label><label>内容覆盖范围<select name="evidence_level"><option value="metadata">仅书目信息</option><option value="abstract">摘要</option><option value="excerpt">节选 / 网页正文</option><option value="fulltext">完整正文提取文本</option></select></label><div class="checks"><label class="checkbox"><input type="checkbox" name="verified">已人工核验</label><label class="checkbox"><input type="checkbox" name="excluded">从综述和问答中排除</label></div><label class="span2">原始摘要 / 正文（问答证据）<textarea name="text" rows="8" placeholder="粘贴可引用的原文；自己的评论请放在备注中"></textarea></label><label class="span2">备注<textarea name="notes" rows="3"></textarea></label></div><div id="source-provenance" class="hint"></div><div class="dialog-actions"><div class="actions"><a id="source-card" class="button secondary" hidden>下载独立笔记</a><button id="source-fetch" type="button" class="secondary" hidden>抓取原文</button></div><button class="primary" type="submit">保存资料</button></div></form></dialog>
+
+  <dialog id="settings-dialog"><div class="dialog-heading"><h2>模型与搜集设置</h2><button data-close class="icon-button" aria-label="关闭">×</button></div>
+    <form id="model-form"><label>模型接入方式<select id="model-backend" name="llm_backend"><option value="codex">本机 Codex · 使用 CLI 登录</option><option value="api">模型 API · 外部或本地兼容服务</option></select></label>
+      <div id="codex-options"><label>Codex 模型（可选）<input id="codex-model" name="codex_model" maxlength="120" placeholder="留空使用 CLI 默认模型"></label><p id="codex-detected" class="hint"></p><p class="hint">首次使用请在本机终端运行 <code>codex login</code> 完成官方登录。这里不需要填写 API Key。模型名称需是该账户可用的 Codex 模型。</p></div>
+      <div id="api-options" hidden><p id="api-configured" class="hint"></p><p class="hint">在项目 <code>.env</code> 中填写 <code>LLM_BASE_URL</code>、<code>LLM_MODEL</code>、<code>LLM_API_KEY</code> 后重启。兼容 Chat Completions；切换接入方式会保留这些配置。</p></div>
+      <div class="actions"><button id="save-model" type="submit" class="primary">保存接入方式</button><button id="test-model" type="button" class="secondary">保存并测试连接</button></div>
+    </form><p id="model-check-result" class="notice" aria-live="polite" hidden></p>
+    <p class="notice">资料保存在本机。使用 Codex 时，选中的资料文本会发送至 OpenAI，额度与计费取决于 CLI 的登录方式；使用 API 时发送至所配置服务。测试连接也会发起一次简短模型请求。</p>
+    <details><summary>可选搜集服务</summary><p class="hint">首次配置可复制 <code>.env.example</code> 为 <code>.env</code>，勿覆盖已有配置；修改后重启。</p><dl><dt>OPENALEX_API_KEY（可选）</dt><dd>增加论文元数据、摘要和作者单位来源。</dd><dt>BRAVE_SEARCH_API_KEY（可选）</dt><dd>在主题指定的可信域名中搜索其他资料。</dd></dl></details>
+    <p class="hint">接入方式保存后立即生效，重启后保留；运行任务期间无法切换。未配置模型也可搜集、编辑、导出和检索原文。</p>
+  </dialog>
+  <div id="toast" class="toast" role="alert" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>

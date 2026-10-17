@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+*.log
+data/
+.test-output/
+server.log
+server.err.log
+ui-server.log
+ui-server.err.log
